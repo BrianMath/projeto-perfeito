@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuimjerhnhxu6"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_42bfp"]
+[ext_resource type="PackedScene" uid="uid://dwf7fwfu71ny7" path="res://Scenes/boat.tscn" id="1_qumma"]
+[ext_resource type="PackedScene" uid="uid://8pay44yrcj1r" path="res://Scenes/spawner.tscn" id="4_lt26h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3swr3"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_867nx"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y52f2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41xad"]
+size = Vector2(1907, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_42bfp")
+
+[node name="Boat" parent="." instance=ExtResource("1_qumma")]
+
+[node name="Spawner" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(8, -80)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_3swr3")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_867nx")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+
+[node name="BottomWallCollision" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_y52f2")
+
+[node name="ObstaclesKiller" type="Area2D" parent="Walls"]
+position = Vector2(1920, 1090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/ObstaclesKiller"]
+position = Vector2(-957.5, 7)
+shape = SubResource("RectangleShape2D_41xad")
+
+[connection signal="area_entered" from="Walls/ObstaclesKiller" to="." method="_on_obstacles_killer_area_entered"]
