@@ -1,7 +1,109 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjcdnne6npno2"]
+[gd_scene load_steps=17 format=3 uid="uid://bjcdnne6npno2"]
 
 [ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_44c1b"]
-[ext_resource type="Texture2D" uid="uid://dbwd756ku6kb0" path="res://icon.svg" id="1_qa413"]
+[ext_resource type="Texture2D" uid="uid://dprr5y8rbnsy" path="res://Assets/objetos.png" id="2_vuxee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r87k7"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_araml"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk51u"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0grn"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q062p"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj2x3"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy2qs"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yshhn"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(768, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4716"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frmmy"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jpmv"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xccqo"]
+atlas = ExtResource("2_vuxee")
+region = Rect2(768, 512, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2sswy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r87k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_araml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk51u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0grn")
+}],
+"loop": true,
+"name": &"Bombas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q062p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj2x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy2qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yshhn")
+}],
+"loop": true,
+"name": &"Caxa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4716")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frmmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jpmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xccqo")
+}],
+"loop": true,
+"name": &"Pedra",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3uwb"]
 radius = 51.0882
@@ -9,8 +111,10 @@ radius = 51.0882
 [node name="Obstacle" type="Area2D"]
 script = ExtResource("1_44c1b")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qa413")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2sswy")
+animation = &"Bombas"
+autoplay = "Bombas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n3uwb")

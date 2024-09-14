@@ -1,11 +1,13 @@
 extends Area2D
 
 var speed = 100
+@onready var sprite_2d = $Sprite2D
+
+var list = ['Pedra', 'Bombas', 'Caxa']
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	sprite_2d.animation = list[randi() % 3]
 
 func _process(delta):
 	position.y += speed * delta

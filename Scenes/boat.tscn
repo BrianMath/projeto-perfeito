@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwf7fwfu71ny7"]
+[gd_scene load_steps=9 format=3 uid="uid://dwf7fwfu71ny7"]
 
 [ext_resource type="Script" path="res://Scripts/boat.gd" id="1_ek2nj"]
-[ext_resource type="Texture2D" uid="uid://dbwd756ku6kb0" path="res://icon.svg" id="1_qgdet"]
+[ext_resource type="Texture2D" uid="uid://d1ypduv6q0eb6" path="res://Assets/barco.png" id="2_a5lmo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qts1"]
-size = Vector2(125.5, 122.5)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkgvb"]
+atlas = ExtResource("2_a5lmo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dflri"]
+atlas = ExtResource("2_a5lmo")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trgmh"]
+atlas = ExtResource("2_a5lmo")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tvax"]
+atlas = ExtResource("2_a5lmo")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_154qe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkgvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dflri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trgmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tvax")
+}],
+"loop": true,
+"name": &"Velejar",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ln0f0"]
+radius = 60.0
+height = 232.0
 
 [node name="Boat" type="CharacterBody2D" groups=["boat"]]
 position = Vector2(960, 540)
@@ -18,10 +55,13 @@ position_smoothing_enabled = true
 drag_vertical_offset = -1.0
 editor_draw_limits = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -1)
-texture = ExtResource("1_qgdet")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.00002, -8)
+scale = Vector2(0.835938, 0.835938)
+sprite_frames = SubResource("SpriteFrames_154qe")
+animation = &"Velejar"
+autoplay = "Velejar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.75, -1.25)
-shape = SubResource("RectangleShape2D_6qts1")
+position = Vector2(1, -1.00003)
+shape = SubResource("CapsuleShape2D_ln0f0")

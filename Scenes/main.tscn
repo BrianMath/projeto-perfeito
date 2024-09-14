@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuimjerhnhxu6"]
+[gd_scene load_steps=23 format=3 uid="uid://cuimjerhnhxu6"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_42bfp"]
 [ext_resource type="PackedScene" uid="uid://dwf7fwfu71ny7" path="res://Scenes/boat.tscn" id="1_qumma"]
 [ext_resource type="PackedScene" uid="uid://8pay44yrcj1r" path="res://Scenes/spawner.tscn" id="4_lt26h"]
+[ext_resource type="Script" path="res://Scenes/panel.gd" id="4_tnimw"]
+[ext_resource type="FontFile" uid="uid://k233834bfr3e" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="5_01n3a"]
+[ext_resource type="Texture2D" uid="uid://dlykx0fvetq55" path="res://Assets/fumaça.png" id="5_12xik"]
+[ext_resource type="Texture2D" uid="uid://ul7h85nfwn64" path="res://Assets/mar.png" id="6_7yw0q"]
+[ext_resource type="Texture2D" uid="uid://cthsu7gykxvia" path="res://Assets/farol.png" id="7_0jbni"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3swr3"]
 normal = Vector2(1, 0)
@@ -15,13 +20,74 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41xad"]
 size = Vector2(1907, 20)
 
+[sub_resource type="LabelSettings" id="LabelSettings_eqnqk"]
+font = ExtResource("5_01n3a")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eurq4"]
+atlas = ExtResource("5_12xik")
+region = Rect2(0, 0, 1200, 674)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wpoq"]
+atlas = ExtResource("5_12xik")
+region = Rect2(1200, 0, 1200, 674)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aw3x"]
+atlas = ExtResource("5_12xik")
+region = Rect2(2400, 0, 1200, 674)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40u2w"]
+atlas = ExtResource("5_12xik")
+region = Rect2(3600, 0, 1200, 674)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8m6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eurq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wpoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aw3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40u2w")
+}],
+"loop": true,
+"name": &"Nuvens",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gygg2"]
+size = Vector2(1899, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m300k"]
+atlas = ExtResource("7_0jbni")
+region = Rect2(0, 0, 640, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlyqu"]
+atlas = ExtResource("7_0jbni")
+region = Rect2(640, 0, 640, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbcvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m300k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlyqu")
+}],
+"loop": true,
+"name": &"Farol",
+"speed": 5.0
+}]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_42bfp")
 
 [node name="Boat" parent="." instance=ExtResource("1_qumma")]
-
-[node name="Spawner" parent="." instance=ExtResource("4_lt26h")]
-position = Vector2(8, -80)
 
 [node name="Walls" type="Node" parent="."]
 
@@ -49,4 +115,151 @@ position = Vector2(1920, 1090)
 position = Vector2(-957.5, 7)
 shape = SubResource("RectangleShape2D_41xad")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 1496.0
+offset_top = 14.0
+offset_right = 1904.0
+offset_bottom = 150.0
+script = ExtResource("4_tnimw")
+
+[node name="Milisegundo" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.198
+anchor_top = 0.566
+anchor_right = -2.198
+anchor_bottom = 0.566
+offset_left = 1144.78
+offset_top = -57.976
+offset_right = 1174.78
+offset_bottom = -11.976
+scale = Vector2(4, 4)
+text = "000"
+label_settings = SubResource("LabelSettings_eqnqk")
+horizontal_alignment = 2
+
+[node name="Segundo" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.198
+anchor_top = 0.566
+anchor_right = -2.198
+anchor_bottom = 0.566
+offset_left = 1054.78
+offset_top = -57.976
+offset_right = 1078.78
+offset_bottom = -11.976
+scale = Vector2(4, 4)
+text = "00."
+label_settings = SubResource("LabelSettings_eqnqk")
+horizontal_alignment = 2
+
+[node name="Minuto" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.198
+anchor_top = 0.566
+anchor_right = -2.198
+anchor_bottom = 0.566
+offset_left = 954.784
+offset_top = -57.976
+offset_right = 978.784
+offset_bottom = -11.976
+scale = Vector2(4, 4)
+text = "00:"
+label_settings = SubResource("LabelSettings_eqnqk")
+horizontal_alignment = 2
+
+[node name="Nuvens" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(962.985, 436)
+scale = Vector2(1.60831, 1.60831)
+sprite_frames = SubResource("SpriteFrames_b8m6f")
+animation = &"Nuvens"
+autoplay = "Nuvens"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="Mar" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(957, -8655)
+scale = Vector2(2.41781, 2.41781)
+texture = ExtResource("6_7yw0q")
+
+[node name="Mar2" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(957, -28078)
+scale = Vector2(2.41781, 2.41781)
+texture = ExtResource("6_7yw0q")
+
+[node name="Mar3" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(957, -47156)
+scale = Vector2(2.41781, 2.41781)
+texture = ExtResource("6_7yw0q")
+
+[node name="Mar4" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(957, -66579)
+scale = Vector2(2.41781, 2.41781)
+texture = ExtResource("6_7yw0q")
+
+[node name="Farol" type="Area2D" parent="."]
+position = Vector2(969, -75569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farol"]
+position = Vector2(-10.5, -15)
+shape = SubResource("RectangleShape2D_gygg2")
+
+[node name="ColorRect" type="ColorRect" parent="Farol"]
+offset_left = -1032.0
+offset_top = -824.0
+offset_right = 1010.0
+offset_bottom = -6.0
+color = Color(0.160784, 0.470588, 0.0745098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Farol"]
+offset_left = -1029.0
+offset_top = -8.0
+offset_right = 1013.0
+offset_bottom = 37.0
+color = Color(0.337255, 0.207843, 0.101961, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Farol"]
+position = Vector2(-24.9999, -309.002)
+scale = Vector2(0.817188, 0.594021)
+sprite_frames = SubResource("SpriteFrames_cbcvd")
+animation = &"Farol"
+autoplay = "Farol"
+
+[node name="Spawner" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(5, -80)
+limite = 325
+inicio = 30
+
+[node name="Spawner2" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(325, -80)
+limite = 645
+inicio = 385
+
+[node name="Spawner3" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(645, -80)
+limite = 965
+inicio = 705
+
+[node name="Spawner4" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(965, -80)
+limite = 1285
+inicio = 1025
+
+[node name="Spawner5" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(1285, -80)
+limite = 1605
+inicio = 1345
+
+[node name="Spawner6" parent="." instance=ExtResource("4_lt26h")]
+position = Vector2(1605, -80)
+limite = 1860
+inicio = 1625
+
 [connection signal="area_entered" from="Walls/ObstaclesKiller" to="." method="_on_obstacles_killer_area_entered"]
+[connection signal="body_entered" from="Farol" to="." method="_on_farol_body_entered"]

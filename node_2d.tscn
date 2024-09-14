@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjogmdjwn0fv5"]
+
+[ext_resource type="Texture2D" uid="uid://cthsu7gykxvia" path="res://Assets/farol.png" id="1_7s0do"]
+[ext_resource type="PackedScene" uid="uid://dwf7fwfu71ny7" path="res://Scenes/boat.tscn" id="2_fqnrd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wot6m"]
+font_color = Color(1, 0.760784, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m300k"]
+atlas = ExtResource("1_7s0do")
+region = Rect2(0, 0, 640, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlyqu"]
+atlas = ExtResource("1_7s0do")
+region = Rect2(640, 0, 640, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2m2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m300k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlyqu")
+}],
+"loop": true,
+"name": &"Farol",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.752941, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 846.0
+offset_right = 405.0
+offset_bottom = 869.0
+scale = Vector2(5, 5)
+text = "Você chegou em segurança.... Ou será que não?"
+label_settings = SubResource("LabelSettings_wot6m")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -92.0
+offset_top = -65.0
+offset_right = 1950.0
+offset_bottom = 815.0
+color = Color(0.160784, 0.470588, 0.0745098, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -84.0
+offset_top = 801.0
+offset_right = 1958.0
+offset_bottom = 846.0
+color = Color(0.337255, 0.207843, 0.101961, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(971.5, 414.132)
+scale = Vector2(1.01406, 0.737132)
+sprite_frames = SubResource("SpriteFrames_q2m2o")
+animation = &"Farol"
+autoplay = "Farol"
+
+[node name="Boat" parent="." instance=ExtResource("2_fqnrd")]
+position = Vector2(920, 957)
