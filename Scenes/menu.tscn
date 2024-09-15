@@ -1,28 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dniwl1jjyxbka"]
+[gd_scene load_steps=4 format=3 uid="uid://dniwl1jjyxbka"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_7l50v"]
-[ext_resource type="Texture2D" uid="uid://dbwd756ku6kb0" path="res://icon.svg" id="2_ek04k"]
+[ext_resource type="Texture2D" uid="uid://d0q5wgshnas1f" path="res://Assets/Images/logo.png" id="2_yl2vo"]
 [ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="3_gr15r"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_fdl5o"]
-font = ExtResource("3_gr15r")
-font_size = 150
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_7l50v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(14.8906, 8.46875)
-texture = ExtResource("2_ek04k")
+position = Vector2(0, -2)
+scale = Vector2(1.2, 1.20444)
+texture = ExtResource("2_yl2vo")
 centered = false
-
-[node name="Label" type="Label" parent="."]
-offset_left = 489.0
-offset_top = 37.0
-offset_right = 1426.0
-offset_bottom = 207.0
-text = "Kume Lado 💩"
-label_settings = SubResource("LabelSettings_fdl5o")
 
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 801.0

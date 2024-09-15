@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cuimjerhnhxu6"]
+[gd_scene load_steps=48 format=3 uid="uid://cuimjerhnhxu6"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_42bfp"]
 [ext_resource type="PackedScene" uid="uid://dwf7fwfu71ny7" path="res://Scenes/boat.tscn" id="1_qumma"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlykx0fvetq55" path="res://Assets/Images/fumaça.png" id="5_12xik"]
 [ext_resource type="Texture2D" uid="uid://ul7h85nfwn64" path="res://Assets/Images/mar.png" id="6_7yw0q"]
 [ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="6_v7o8l"]
+[ext_resource type="Texture2D" uid="uid://dbnrkvx0aa8e7" path="res://chuva.png" id="6_xfh0s"]
 [ext_resource type="Texture2D" uid="uid://cthsu7gykxvia" path="res://Assets/Images/farol.png" id="7_0jbni"]
 [ext_resource type="AudioStream" uid="uid://ctx2lqjnb8dg4" path="res://Assets/Sounds/jogo.wav" id="10_1d3fv"]
 
@@ -178,6 +179,42 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd6jm"]
+atlas = ExtResource("6_xfh0s")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3onbd"]
+atlas = ExtResource("6_xfh0s")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v0an"]
+atlas = ExtResource("6_xfh0s")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sco1e"]
+atlas = ExtResource("6_xfh0s")
+region = Rect2(500, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xi0fk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd6jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3onbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v0an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sco1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_eqnqk"]
 font = ExtResource("6_v7o8l")
 font_size = 24
@@ -260,6 +297,13 @@ scale = Vector2(1.61245, 1.21956)
 sprite_frames = SubResource("SpriteFrames_b8m6f")
 animation = &"Raios"
 autoplay = "Raios"
+
+[node name="Chuva" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(940, 555.5)
+scale = Vector2(3.836, 2.326)
+sprite_frames = SubResource("SpriteFrames_xi0fk")
+autoplay = "default"
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_left = 1496.0

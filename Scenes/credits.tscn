@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://y43ykv88i73o"]
+[gd_scene load_steps=7 format=3 uid="uid://y43ykv88i73o"]
 
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_m6h2b"]
 [ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="2_7nrt8"]
-[ext_resource type="Texture2D" uid="uid://dbwd756ku6kb0" path="res://icon.svg" id="3_fau7d"]
+[ext_resource type="Texture2D" uid="uid://bkxv4jfs7ga58" path="res://Assets/Images/panda.png" id="3_u4fiu"]
+[ext_resource type="Texture2D" uid="uid://13bxpuhqbqft" path="res://Assets/Images/gato.png" id="4_e8aw3"]
+[ext_resource type="Texture2D" uid="uid://drcehg8b4qwi2" path="res://Assets/Images/galinha.png" id="5_h5tca"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cdk0p"]
 font = ExtResource("2_7nrt8")
@@ -26,45 +28,46 @@ theme_override_font_sizes/font_size = 80
 text = "<- Back"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 117.0
-offset_top = 774.0
-offset_right = 467.0
-offset_bottom = 864.0
+offset_left = 93.5001
+offset_top = 754.75
+offset_right = 713.5
+offset_bottom = 937.75
 text = "BrianMath
-Gostoso"
+Gostoso/esquisito"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 747.0
-offset_top = 763.0
-offset_right = 1177.0
-offset_bottom = 946.0
-text = "Already Paid
-À toa"
+offset_left = 854.0
+offset_top = 762.0
+offset_right = 1284.0
+offset_bottom = 945.0
+text = "Capiche
+À toa lindo"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1450.0
-offset_top = 759.0
-offset_right = 1800.0
-offset_bottom = 942.0
+offset_left = 1514.5
+offset_top = 758.75
+offset_right = 1864.5
+offset_bottom = 941.75
 text = "Vitu
 Biel"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.345098, 1, 0.337255, 1)
-position = Vector2(246, 585)
-texture = ExtResource("3_fau7d")
+position = Vector2(372.5, 490.75)
+scale = Vector2(0.233333, 0.233333)
+texture = ExtResource("3_u4fiu")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-modulate = Color(1, 0.105882, 1, 1)
-position = Vector2(937, 596)
-texture = ExtResource("3_fau7d")
+position = Vector2(1026.5, 482.75)
+scale = Vector2(0.401064, 0.401064)
+texture = ExtResource("4_e8aw3")
 
 [node name="Icon3" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(1579, 603)
-texture = ExtResource("3_fau7d")
+position = Vector2(1615, 457)
+scale = Vector2(0.3835, 0.3835)
+texture = ExtResource("5_h5tca")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

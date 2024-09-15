@@ -7,6 +7,7 @@ extends Panel
 @onready var spawner_6 = $"../../Spawner6"
 @onready var raios = $"../Raios"
 @onready var boat = $"../../Boat"
+@onready var chuva = $"../Chuva"
 
 var endline: bool = false
 var tempo: float = 120.00
@@ -33,6 +34,7 @@ func _process(delta) -> void:
 		spawner_3.tempoI = 0.7
 		spawner_3.tempoF = 0.8
 		raios.visible = true
+		chuva.visible = true
 	
 	# game over
 	if (tempo <= 0):

@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd0shhw2vo0ai"]
+
+[ext_resource type="Script" path="res://Scenes/control.gd" id="1_hu748"]
+[ext_resource type="Texture2D" uid="uid://davrtavcs0lrk" path="res://Assets/Images/setas.png" id="1_xry8e"]
+
+[node name="Control" type="Node2D"]
+script = ExtResource("1_hu748")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.122
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 1965.0
+offset_bottom = 1118.0
+color = Color(0.298138, 0.407093, 0.527914, 1)
+
+[node name="setas" type="Sprite2D" parent="."]
+position = Vector2(1074, 326)
+scale = Vector2(4.81, 4.95)
+texture = ExtResource("1_xry8e")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1519.0
+offset_top = 916.0
+offset_right = 1605.0
+offset_bottom = 947.0
+scale = Vector2(4, 4)
+text = "Continuar"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 346.0
+offset_right = 291.0
+offset_bottom = 369.0
+scale = Vector2(5, 5)
+text = "Use as setas para se movimentar"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 498.0
+offset_right = 430.0
+offset_bottom = 573.0
+scale = Vector2(5, 5)
+text = "Chegue ao farol antes do tempo acabar! 
+Mas cuidado, há uma tempestade 
+se aproximando de você!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
