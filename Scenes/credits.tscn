@@ -28,45 +28,46 @@ theme_override_font_sizes/font_size = 80
 text = "<- Back"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 93.5001
-offset_top = 754.75
-offset_right = 713.5
-offset_bottom = 937.75
+offset_left = 49.0
+offset_top = 548.0
+offset_right = 669.0
+offset_bottom = 731.0
 text = "BrianMath
-Gostoso/esquisito"
+Programmer"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 854.0
-offset_top = 762.0
-offset_right = 1284.0
-offset_bottom = 945.0
-text = "Capiche
-À toa lindo"
+offset_left = 811.0
+offset_top = 565.0
+offset_right = 1241.0
+offset_bottom = 748.0
+text = "Capicheee
+Programmer"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1514.5
-offset_top = 758.75
-offset_right = 1864.5
-offset_bottom = 941.75
-text = "Vitu
-Biel"
+offset_left = 1552.0
+offset_top = 535.0
+offset_right = 1902.0
+offset_bottom = 718.0
+text = "yasushiki
+Artist"
 label_settings = SubResource("LabelSettings_cdk0p")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(372.5, 490.75)
+position = Vector2(264, 906)
+rotation = -0.0861854
 scale = Vector2(0.233333, 0.233333)
 texture = ExtResource("3_u4fiu")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(1026.5, 482.75)
+position = Vector2(996, 332)
 scale = Vector2(0.401064, 0.401064)
 texture = ExtResource("4_e8aw3")
 
 [node name="Icon3" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(1615, 457)
+position = Vector2(1721, 886)
 scale = Vector2(0.3835, 0.3835)
 texture = ExtResource("5_h5tca")
 

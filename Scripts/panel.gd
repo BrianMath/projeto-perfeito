@@ -7,7 +7,8 @@ extends Panel
 @onready var spawner_6 = $"../../Spawner6"
 @onready var raios = $"../Raios"
 @onready var boat = $"../../Boat"
-@onready var chuva = $"../Chuva"
+@onready var chuvas = $"../Chuvas"
+
 
 var endline: bool = false
 var tempo: float = 120.00
@@ -17,8 +18,11 @@ var Milisegundo: int = 0
 
 func _process(delta) -> void:
 	tempo -= delta
+	@warning_ignore("narrowing_conversion")
 	Minuto = fmod(tempo, 3600.0) / 60.0
+	@warning_ignore("narrowing_conversion")
 	Segundo = fmod(tempo, 60)
+	@warning_ignore("narrowing_conversion")
 	Milisegundo = fmod(tempo, 1) * 100
 	
 	#tempestade
@@ -27,14 +31,18 @@ func _process(delta) -> void:
 		spawner.tempoF = 0.3
 		spawner_6.tempoI = 0.1
 		spawner_6.tempoF = 0.3
+		
 		spawner_2.tempoI = 0.5
 		spawner_2.tempoF = 1
-		spawner_4.tempoI = 0.5
-		spawner_4.tempoF = 1
+		spawner_5.tempoI = 0.5
+		spawner_5.tempoF = 1
+		
 		spawner_3.tempoI = 0.7
 		spawner_3.tempoF = 0.8
+		spawner_4.tempoI = 0.7
+		spawner_4.tempoF = 0.8
 		raios.visible = true
-		chuva.visible = true
+		chuvas.visible = true
 	
 	# game over
 	if (tempo <= 0):

@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="4_tnimw"]
 [ext_resource type="Texture2D" uid="uid://dlykx0fvetq55" path="res://Assets/Images/fumaça.png" id="5_12xik"]
 [ext_resource type="Texture2D" uid="uid://ul7h85nfwn64" path="res://Assets/Images/mar.png" id="6_7yw0q"]
+[ext_resource type="Texture2D" uid="uid://b1x1pndu7h4n1" path="res://Assets/Images/chuva.png" id="6_seklw"]
 [ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="6_v7o8l"]
-[ext_resource type="Texture2D" uid="uid://dbnrkvx0aa8e7" path="res://chuva.png" id="6_xfh0s"]
 [ext_resource type="Texture2D" uid="uid://cthsu7gykxvia" path="res://Assets/Images/farol.png" id="7_0jbni"]
 [ext_resource type="AudioStream" uid="uid://ctx2lqjnb8dg4" path="res://Assets/Sounds/jogo.wav" id="10_1d3fv"]
 
@@ -179,40 +179,40 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wd6jm"]
-atlas = ExtResource("6_xfh0s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vypf"]
+atlas = ExtResource("6_seklw")
 region = Rect2(0, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3onbd"]
-atlas = ExtResource("6_xfh0s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7asg"]
+atlas = ExtResource("6_seklw")
 region = Rect2(500, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4v0an"]
-atlas = ExtResource("6_xfh0s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgoni"]
+atlas = ExtResource("6_seklw")
 region = Rect2(0, 500, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sco1e"]
-atlas = ExtResource("6_xfh0s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhh51"]
+atlas = ExtResource("6_seklw")
 region = Rect2(500, 500, 500, 500)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xi0fk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8a31t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wd6jm")
+"texture": SubResource("AtlasTexture_8vypf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3onbd")
+"texture": SubResource("AtlasTexture_c7asg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4v0an")
+"texture": SubResource("AtlasTexture_xgoni")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sco1e")
+"texture": SubResource("AtlasTexture_vhh51")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"Chuvas",
+"speed": 3.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eqnqk"]
@@ -297,13 +297,16 @@ scale = Vector2(1.61245, 1.21956)
 sprite_frames = SubResource("SpriteFrames_b8m6f")
 animation = &"Raios"
 autoplay = "Raios"
+frame = 4
+frame_progress = 0.575116
 
-[node name="Chuva" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="Chuvas" type="AnimatedSprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(940, 555.5)
-scale = Vector2(3.836, 2.326)
-sprite_frames = SubResource("SpriteFrames_xi0fk")
-autoplay = "default"
+scale = Vector2(3.836, 1.942)
+sprite_frames = SubResource("SpriteFrames_8a31t")
+animation = &"Chuvas"
+autoplay = "Chuvas"
+centered = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_left = 1496.0

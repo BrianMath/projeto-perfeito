@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0shhw2vo0ai"]
+[gd_scene load_steps=6 format=3 uid="uid://bd0shhw2vo0ai"]
 
-[ext_resource type="Script" path="res://Scenes/control.gd" id="1_hu748"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="1_hu748"]
 [ext_resource type="Texture2D" uid="uid://davrtavcs0lrk" path="res://Assets/Images/setas.png" id="1_xry8e"]
+[ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="3_nuaex"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2ky5"]
+font = ExtResource("3_nuaex")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_dpnyf"]
+font = ExtResource("3_nuaex")
+font_size = 24
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_hu748")
@@ -17,34 +26,40 @@ offset_bottom = 1118.0
 color = Color(0.298138, 0.407093, 0.527914, 1)
 
 [node name="setas" type="Sprite2D" parent="."]
-position = Vector2(1074, 326)
+position = Vector2(1712, 305)
 scale = Vector2(4.81, 4.95)
 texture = ExtResource("1_xry8e")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1519.0
-offset_top = 916.0
-offset_right = 1605.0
-offset_bottom = 947.0
-scale = Vector2(4, 4)
-text = "Continuar"
-
 [node name="Label" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 346.0
-offset_right = 291.0
-offset_bottom = 369.0
+offset_left = 39.0
+offset_top = 28.0001
+offset_right = 313.0
+offset_bottom = 85.0001
 scale = Vector2(5, 5)
-text = "Use as setas para se movimentar"
+text = "Use the arrows or wasd to move"
+label_settings = SubResource("LabelSettings_j2ky5")
+autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 39.0
-offset_top = 498.0
-offset_right = 430.0
-offset_bottom = 573.0
+offset_left = 33.0
+offset_top = 357.0
+offset_right = 410.0
+offset_bottom = 474.0
 scale = Vector2(5, 5)
-text = "Chegue ao farol antes do tempo acabar! 
-Mas cuidado, há uma tempestade 
-se aproximando de você!"
+text = "Get to the lighthouse before the time is over. 
+But be careful: a storm is coming!!!
+⛈️😱"
+label_settings = SubResource("LabelSettings_dpnyf")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1462.0
+offset_top = 937.0
+offset_right = 1569.0
+offset_bottom = 972.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("3_nuaex")
+theme_override_font_sizes/font_size = 24
+text = "Start"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bptbtkwslx5hp"]
+[gd_scene load_steps=7 format=3 uid="uid://bptbtkwslx5hp"]
 
 [ext_resource type="Script" path="res://Scripts/the_end.gd" id="1_0q8et"]
 [ext_resource type="Texture2D" uid="uid://c06nm6rm4rg47" path="res://Assets/Images/ganhou.png" id="1_062ac"]
@@ -7,7 +7,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_60cbg"]
 font = ExtResource("3_25y20")
-font_size = 150
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_ptwoy"]
+font_size = 24
+font_color = Color(0.38, 0.2337, 0.114, 1)
 
 [node name="TheEnd" type="Node2D"]
 script = ExtResource("1_0q8et")
@@ -24,6 +28,14 @@ offset_right = 824.0
 offset_bottom = 252.0
 text = "You won! :)"
 label_settings = SubResource("LabelSettings_60cbg")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 1050.0
+offset_right = 1157.0
+offset_bottom = 1211.0
+text = "ЖÍГА天ЕМБÁOWÍБÍГЕ"
+label_settings = SubResource("LabelSettings_ptwoy")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 10.0

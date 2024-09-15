@@ -14,19 +14,19 @@ texture = ExtResource("2_yl2vo")
 centered = false
 
 [node name="PlayButton" type="Button" parent="."]
-offset_left = 801.0
-offset_top = 313.0
-offset_right = 1108.0
-offset_bottom = 491.0
+offset_left = 614.0
+offset_top = 486.0
+offset_right = 921.0
+offset_bottom = 664.0
 theme_override_fonts/font = ExtResource("3_gr15r")
 theme_override_font_sizes/font_size = 140
 text = "Play"
 
 [node name="CreditsButton" type="Button" parent="."]
-offset_left = 700.0
-offset_top = 537.0
-offset_right = 1191.0
-offset_bottom = 715.0
+offset_left = 1079.0
+offset_top = 489.0
+offset_right = 1570.0
+offset_bottom = 667.0
 theme_override_fonts/font = ExtResource("3_gr15r")
 theme_override_font_sizes/font_size = 140
 text = "Credits"
