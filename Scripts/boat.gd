@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const MAX_SPEED := 1000
 @export var speed := 200
-@export var acceleration := 10
+@export var acceleration := 20
 
 func get_input(delta):
 	#look_at(get_global_mouse_position())

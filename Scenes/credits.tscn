@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://y43ykv88i73o"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_m6h2b"]
+[ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="2_7nrt8"]
+[ext_resource type="Texture2D" uid="uid://dbwd756ku6kb0" path="res://icon.svg" id="3_fau7d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdk0p"]
+font = ExtResource("2_7nrt8")
+font_size = 80
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_m6h2b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -49.0
+offset_top = -34.0
+offset_right = 1988.0
+offset_bottom = 1161.0
+color = Color(0.148809, 0.200271, 0.221457, 1)
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_7nrt8")
+theme_override_font_sizes/font_size = 80
+text = "<- Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 117.0
+offset_top = 774.0
+offset_right = 467.0
+offset_bottom = 864.0
+text = "BrianMath
+Gostoso"
+label_settings = SubResource("LabelSettings_cdk0p")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 747.0
+offset_top = 763.0
+offset_right = 1177.0
+offset_bottom = 946.0
+text = "Already Paid
+À toa"
+label_settings = SubResource("LabelSettings_cdk0p")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1450.0
+offset_top = 759.0
+offset_right = 1800.0
+offset_bottom = 942.0
+text = "Vitu
+Biel"
+label_settings = SubResource("LabelSettings_cdk0p")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 1, 0.337255, 1)
+position = Vector2(246, 585)
+texture = ExtResource("3_fau7d")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+modulate = Color(1, 0.105882, 1, 1)
+position = Vector2(937, 596)
+texture = ExtResource("3_fau7d")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1579, 603)
+texture = ExtResource("3_fau7d")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

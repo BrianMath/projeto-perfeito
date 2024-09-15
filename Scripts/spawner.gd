@@ -9,7 +9,7 @@ const OBSTACLE = preload("res://Scenes/obstacle.tscn")
 var tempoI = 2
 var tempoF = 5
 
-func _process(delta):
+func _process(_delta):
 	if boat:
 		position.y = boat.position.y - 600
 
