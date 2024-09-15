@@ -47,8 +47,7 @@ offset_right = 410.0
 offset_bottom = 474.0
 scale = Vector2(5, 5)
 text = "Get to the lighthouse before the time is over. 
-But be careful: a storm is coming!!!
-⛈️😱"
+But be careful: a storm is coming!!!"
 label_settings = SubResource("LabelSettings_dpnyf")
 autowrap_mode = 2
 

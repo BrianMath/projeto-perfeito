@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdi1q334o1aqe"]
+
+[ext_resource type="Script" path="res://Scripts/the_bad_end_web.gd" id="1_lfj07"]
+[ext_resource type="Texture2D" uid="uid://pwkbjx3x3y81" path="res://Assets/Images/perdeu.png" id="2_8g3od"]
+[ext_resource type="FontFile" uid="uid://7y2h2u4iw37n" path="res://Assets/Tiny5-Regular.ttf" id="3_4h0nw"]
+[ext_resource type="AudioStream" uid="uid://clmj5oko1fkt3" path="res://Assets/Sounds/morte.wav" id="4_trc8w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_765h1"]
+font = ExtResource("3_4h0nw")
+font_size = 150
+
+[node name="TheBadEnd_WEB" type="Node2D"]
+script = ExtResource("1_lfj07")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.6875, 1.6875)
+texture = ExtResource("2_8g3od")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 61.0
+offset_right = 824.0
+offset_bottom = 252.0
+text = "You lost! :("
+label_settings = SubResource("LabelSettings_765h1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_trc8w")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
